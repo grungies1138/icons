@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "minimumCoreVersion": "0.5.5",
   "compatibleCoreVersion": "0.7.0",
-  "url": "https://github.com/datdamnzotz/icons/README-FoundryVTT.md",
+  "url": "https://github.com/datdamnzotz/icons/blob/master/README-FoundryVTT.md",
   "manifest": "https://raw.githubusercontent.com/datdamnzotz/icons/master/module.json",
   "download": "https://github.com/datdamnzotz/icons/releases/download/0.0.1/0.0.1.zip"
 }
