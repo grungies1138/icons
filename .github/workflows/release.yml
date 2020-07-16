@@ -25,7 +25,7 @@ jobs:
   
       - name: Get background icons 
         run: | 
-        wget https://game-icons.net/archives/svg/zip/ffffff/000000/game-icons.net.svg.zip
+          wget https://game-icons.net/archives/svg/zip/ffffff/000000/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -oblackbackground *.svg -r && rm game-icons.net.svg.zip
           wget https://game-icons.net/archives/svg/zip/000000/ffffff/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -owhitebackground *.svg -r && rm game-icons.net.svg.zip
