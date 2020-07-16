@@ -27,13 +27,20 @@ jobs:
         run: | 
           wget https://game-icons.net/archives/svg/zip/ffffff/000000/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -oblackbackground *.svg -r && rm game-icons.net.svg.zip
+          sed -i "s/viewBox=\"0 0 512 512\"/viewBox=\"0 0 512 512\" width=\"512\" height=\"512\"/g" blackbackground\*.svg
+          
           wget https://game-icons.net/archives/svg/zip/000000/ffffff/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -owhitebackground *.svg -r && rm game-icons.net.svg.zip
+          sed -i "s/viewBox=\"0 0 512 512\"/viewBox=\"0 0 512 512\" width=\"512\" height=\"512\"/g" whitebackground\*.svg
+          
           wget https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -oblacktransparent *.svg -r && rm game-icons.net.svg.zip
+          sed -i "s/viewBox=\"0 0 512 512\"/viewBox=\"0 0 512 512\" width=\"512\" height=\"512\"/g" blacktransparent\*.svg
+          
           wget https://game-icons.net/archives/svg/zip/ffffff/transparent/game-icons.net.svg.zip
           7z e game-icons.net.svg.zip -aou -owhitetransparent *.svg -r && rm game-icons.net.svg.zip
-          sed -i "s/viewBox=\"0 0 512 512\"/viewBox=\"0 0 512 512\" width=\"512\" height=\"512\"/g" *.svg
+          sed -i "s/viewBox=\"0 0 512 512\"/viewBox=\"0 0 512 512\" width=\"512\" height=\"512\"/g" whitetransparent\*.svg
+          
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip black\* -mx0 -xr!.git -xr!.github
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip white\* -mx0 -xr!.git -xr!.github
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip README* -mx0 -xr!.git -xr!.github
