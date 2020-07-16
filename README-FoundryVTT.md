@@ -1,21 +1,38 @@
-# Game-icons.net repackaged for Foundry VTT
+# Foundry VTT - Game-icons.net All the icons for Foundry VTT 
 
-This fork is all SVG icons available on http://game-icons.net and will be updated when new icons are pushed to game-icons.
+Featuring:
 
-(just repackaged for Foundry VTT)
+All SVG icons available (3800+) on http://game-icons.net with white and black backgrounds.
 
-## Use
+![](.github/whitebackground.png?raw=true) ![](.github/blackbackground.png?raw=true)
 
-Browse to the Data/modules/game-icons-net/ directory for your icon needs.
+# Automatic Installation - Setup -> Add-on Modules
 
-## Download the module via 
+Search for 'Game-icons' under the filter packages and install.
+
+![](.github/installmodule.png?raw=true)
+
+# Manual Installation
+
+Copy the manifest url below and paste it into Manifest URL. Click install.
 
 `https://raw.githubusercontent.com/datdamnzotz/icons/master/module.json`
 
-## Contribution
+![](.github/manifest.png?raw=true)
 
-Contributions are welcomed! Have a look at this [document](https://github.com/game-icons/icons/blob/master/CONTRIBUTING.md) for help.
+### Or
 
-## License
+Download the latest release zip from `Releases` and unzip it someplace in your Data directory. e.g. Data/icons
 
-CC-BY
+# Use the module
+
+No need to activate this module since it is just content.
+
+Just browse to the icon you want under your
+
+`modules/game=icons-net/(white)(black)backgrounds/` folder.
+
+![](.github/browse.png?raw=true)
+
+
+Enjoy!
