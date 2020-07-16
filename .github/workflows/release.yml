@@ -31,9 +31,20 @@ jobs:
           7z e game-icons.net.svg.zip -aou -owhitebackground *.svg -r && rm game-icons.net.svg.zip
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip black\* -mx0 -xr!.git -xr!.github
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip white\* -mx0 -xr!.git -xr!.github
-          7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip module.json -mx0 -xr!.git -xr!.github
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip README* -mx0 -xr!.git -xr!.github
           7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip license.txt -mx0 -xr!.git -xr!.github
+
+      - name: Update module.json
+        run: |
+          echo Version: ${{ steps.get-version.outputs.next_tag  }}
+          echo Download url: ${{ steps.upload-release-asset.browser_download_url }}
+          sed -i '/"version":/c\  "version": "${{ steps.get-version.outputs.next_tag }}",' module.json
+          sed -i '/"download":/c\  "download": "https://github.com/datdamnzotz/icons/releases/download/${{ steps.get-version.outputs.next_tag }}/${{ steps.get-version.outputs.next_tag  }}.zip"' module.json
+          cat module.json
+
+      - name: Add module.json 
+        run: | 
+          7z a -tzip ${{ steps.get-version.outputs.next_tag  }}.zip module.json -mx0 -xr!.git -xr!.github
 
       - name: Create Release
         id: create-release
@@ -56,14 +67,6 @@ jobs:
           asset_path: ./${{ steps.get-version.outputs.next_tag }}.zip
           asset_name: ${{ steps.get-version.outputs.next_tag }}.zip
           asset_content_type: application/zip
-
-      - name: Update module.json
-        run: |
-          echo Version: ${{ steps.get-version.outputs.next_tag  }}
-          echo Download url: ${{ steps.upload-release-asset.browser_download_url }}
-          sed -i '/"version":/c\  "version": "${{ steps.get-version.outputs.next_tag }}",' module.json
-          sed -i '/"download":/c\  "download": "https://github.com/datdamnzotz/icons/releases/download/${{ steps.get-version.outputs.next_tag }}/${{ steps.get-version.outputs.next_tag  }}.zip"' module.json
-          cat module.json
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
