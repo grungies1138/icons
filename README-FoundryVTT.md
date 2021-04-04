@@ -1,5 +1,8 @@
 # Foundry VTT - Game-icons.net All the icons for Foundry VTT 
 
+![All Downloads](https://img.shields.io/github/downloads/datdamnzotz/icons/total?style=for-the-badge)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/datdamnzotz/icons?style=for-the-badge)
+
 Featuring:
 
 All SVG icons available (3800+) on http://game-icons.net with white and black backgrounds.
