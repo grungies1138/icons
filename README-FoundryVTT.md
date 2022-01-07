@@ -33,7 +33,7 @@ No need to activate this module since it is just content.
 
 Just browse to the icon you want under your
 
-`modules/game=icons-net/(white)(black)backgrounds/` folder.
+`modules/game-icons-net/(white)(black)backgrounds/` folder.
 
 ![](.github/browse.png?raw=true)
 
